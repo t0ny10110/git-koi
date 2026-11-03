@@ -972,8 +972,9 @@ fn calculate_whisker_length(koi_anatomy: &KoiAnatomy) -> u32 {
 fn calculate_lap_radius(body_length_pixels: f64) -> f64 {
     const FRAME_REACH_PIXELS: f64 = 116.0;
     const OUTER_REACH_FRACTION: f64 = 0.33;
-    const MAX_LAP_RADIUS_PIXELS: f64 = 30.0;
-    const MAX_BODY_SHARE_OF_LAP: f64 = 1.2;
+    const MAX_LAP_RADIUS_PIXELS: f64 = 18.0;
+    const MAX_BODY_SHARE_OF_LAP: f64 = 2.0;
+
     (FRAME_REACH_PIXELS - OUTER_REACH_FRACTION * body_length_pixels)
         .min(MAX_LAP_RADIUS_PIXELS)
         .max(body_length_pixels / (TAU * MAX_BODY_SHARE_OF_LAP))
